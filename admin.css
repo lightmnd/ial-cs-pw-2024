@@ -1,0 +1,88 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Lato', sans-serif;
+	font-size:13px;
+	background-color:#CCCCCC;
+}
+table {
+	background-color:#FFFFFF;
+}
+a img {
+	border:none;
+}
+.clear {
+	clear:both;
+}
+.menu {
+	width: 300px;
+}
+.menu ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+.menu a {
+	text-decoration: none;
+	display: block;
+	color: #666666;
+	padding: 10px;
+	border-bottom:1px solid #666;
+}
+.menu a:hover, .menu a.sel {
+	color:#000000;
+	border-bottom:1px solid #000000;
+	background-color:#EAEAEA;
+}
+
+.contents {
+	padding: 10px 20px 20px;
+	border-left: 1px solid #666;
+	border-bottom: 1px solid #666;
+}
+
+.par {
+	background: #EDEDED;
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid #CCCCCC;
+}
+.img {
+	float: right;
+	width: 40%;
+	max-width:300px;
+	margin-left: 20px;
+}
+
+.img img, .img2 img {
+	width: 100%;
+}
+.contents .new, .contents .edit, .contents .delete {
+	float:left;
+	width:120px;
+	text-align:center;
+	padding:5px 10px;
+	font-weight:normal;
+	margin-right:10px;
+}
+a.new, a.edit, a.delete, a.new2 {
+	display:block;
+	text-decoration:none;
+	border:1px solid #FFFFFF;
+}
+a:hover.new, a:hover.edit, a:hover.delete, a:hover.new2 {
+	border-color:#FF0000;
+	background:#FFFFFF;
+	color:#FF0000;
+}
+.edit {
+	color: #003399;
+	background: #FFFF00;
+}
+.delete {
+	color: #FFFFFF;
+	background: #FF0000;
+}
