@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # DB Dump
@@ -30,4 +29,3 @@ fi
 
 # Clean the temporary backup resources
 sudo rm /tmp/db_backup.sql /tmp/sito_test_backup.zip
-
