@@ -11,7 +11,7 @@ This guide provides step-by-step instructions for installing and configuring PHP
 
 ## Prerequisites
 
-- Access to an Ubuntu VM and to an Amazon Linux EC2 instance.
+- Access to an Ubuntu VM and an Amazon Linux EC2 instance.
 - Basic knowledge of Linux command-line operations.
 - AWS CLI installed and configured on your local machine (for S3 operations).
 - Basic knolwdge of Web Development
@@ -181,6 +181,20 @@ Ensure to replace the `$hostname_DBConn`, `$database_DBConn`, `$username_DBConn`
 
 ## Installation on AWS EC2 Amazon Linux
 
+Create an EC2 instance in the AWS console.
+
+---
+
+### IMPORTANT:
+Remember to properly configure the Security Group to allow connection via SSH only from authorized machines.
+For convenience, at the moment the IP rule for SSH connection is set to 0.0.0.0, so it can be reached from anywhere, but for production, it is absolutely necessary to set this rule with the IP of the machines that can actually access it.
+
+Also, consider creating regular snapshots of your EC2 volumes to easily recover your instance in case you lose it or for any other problem affecting your machine.
+You can create a snapshot manually or you can create a scheduled plan with the Lifecycle Policy.
+
+---
+
+
 ### 1. Add Bash Script to EC2 User Data
 
 When launching your EC2 instance, include the following script in the User Data field to automate the setup:
@@ -256,7 +270,7 @@ echo "The installation is completed. Visit http://<your-ec2-ip>/sito_test/info.p
 
 ### 2. Configure DNS and HTTPS
 
-- Set up a DNS alias for your website.
+- Set up a DNS alias for your website. I'm using a free service called NO-IP (https://www.noip.com/it-IT) to obtain a free domain name for the public website exposed by Cassiopea (EC2). Alternatively, you can choose a Route 53 service provided by AWS (with cost).
 - Enable HTTPS with Let’s Encrypt by following the [Certbot instructions](https://certbot.eff.org/instructions).
 
 ### 3. Upload and Backup Website to S3
