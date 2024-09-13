@@ -190,7 +190,7 @@ Remember to properly configure the Security Group to allow connection via SSH on
 For convenience, at the moment the IP rule for SSH connection is set to 0.0.0.0, so it can be reached from anywhere, but for production, it is absolutely necessary to set this rule with the IP of the machines that can actually access it.
 
 Also, consider creating regular snapshots of your EC2 volumes to easily recover your instance in case you lose it or for any other problem affecting your machine.
-You can create a snapshot manually or you can create a scheduled plan with the Lifecycle Policy.
+You can create a snapshot manually or schedule a plan with the Lifecycle Policy. In my case the snapshots will take every Sunday starting at 01:00 UTC and will be retained for 1 weeks.
 
 ---
 
