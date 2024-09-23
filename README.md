@@ -14,11 +14,11 @@ This guide provides step-by-step instructions for installing and configuring PHP
 - Access to an Ubuntu VM and an Amazon Linux EC2 instance.
 - Basic knowledge of Linux command-line operations.
 - AWS CLI installed and configured on your local machine (for S3 operations).
-- Basic knolwdge of Web Development
-- Basic knoledge of Database Systems 
-- Basic knolwedge of System Desing concepts
-- Basic knoledge of Networking
-- Basic knoledge of Security
+- Basic knowledge of Web Development
+- Basic knowledge of Database Systems 
+- Basic knowledge of System Desing concepts
+- Basic knowledge of Networking
+- Basic knowledge of Security
 
 ## Installation on Ubuntu
 
@@ -189,9 +189,10 @@ Create an EC2 instance in the AWS console.
 Remember to properly configure the Security Group to allow connection via SSH only from authorized machines.
 For convenience, at the moment the IP rule for SSH connection is set to 0.0.0.0, so it can be reached from anywhere, but for production, it is absolutely necessary to set this rule with the IP of the machines that can actually access it.
 
-Also, consider creating regular snapshots of your EC2 volumes to easily recover your instance in case you lose it or for any other problem affecting your machine.
-You can create a snapshot manually or schedule a plan with the Lifecycle Policy. In my case the snapshots will take every Sunday starting at 01:00 UTC and will be retained for 1 weeks.
+TIPS:
+1. Consider creating regular snapshots of your EC2 volumes to easily recover your instance in case you lose it or if you have any other problem affecting your machine. You can create a snapshot manually or schedule a plan with the Lifecycle Policy. In my case, the snapshots will be taken every Sunday starting at 01:00 UTC and will be retained for 1 week. 
 
+2. Since the learning purposes of this project, it is preferable to switch it off when it is not necessary to reduce the operational costs.
 ---
 
 
