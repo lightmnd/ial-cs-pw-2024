@@ -394,6 +394,14 @@ If Fail2ban is not available via `pip`, you can install it from source:
    sudo nano /etc/fail2ban/jail.local
    ```
 
+   Make sure you have this settings:
+   ```bash
+   sudo nano /usr/lib/systemd/system/fail2ban.service
+
+   then add this statement
+   ExecStart=/usr/local/bin/fail2ban-server -xf start
+   ```
+
    Start and enable Fail2ban:
 
    ```bash
@@ -415,6 +423,6 @@ If Fail2ban is not available via `pip`, you can install it from source:
    sudo tail -f /var/log/fail2ban.log
    sudo journalctl -u fail2ban
    ```
-   
+
 
 ---
