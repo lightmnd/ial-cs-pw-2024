@@ -399,6 +399,8 @@ If Fail2ban is not available via `pip`, you can install it from source:
    ```bash
    sudo systemctl start fail2ban
    sudo systemctl enable fail2ban
+   sudo fail2ban-client start
+   sudo fail2ban-server start
    ```
 
 5. **Verify Fail2ban Status:**
@@ -411,6 +413,8 @@ If Fail2ban is not available via `pip`, you can install it from source:
 
    ```bash
    sudo tail -f /var/log/fail2ban.log
+   sudo journalctl -u fail2ban
    ```
+   
 
 ---
