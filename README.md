@@ -360,7 +360,29 @@ echo "The installation is completed. Visit http://<your-ec2-ip>/sito_test/info.p
    sudo journalctl -u cron | grep restore_site_and_db.sh
    ```
 
-## Additional Information
+## Haking Time!
+First of all you need to access to Amazon EC2 Machine with ssh using password instead of the key pair
+
+Access the Amazon EC2 instance via SSH using the private key:
+```bash
+ssh -i your-key.pem username@ip_address
+```
+
+Edit the sshd_config file to allow password authentication:
+sudo vim /etc/ssh/sshd_config
+Modify the ‘PasswordAuthentication’ parameter to "yes"
+```bash
+PasswordAuthentication yes
+```bash
+
+Restart the SSH service for changes to take effect:
+```bash
+sudo service ssh restart
+```
+Now, log in to the instance using the password:
+```bash
+ssh username@ip_address
+```bash
 
 ### Fail2ban Installation from Source (Optional)
 
