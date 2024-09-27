@@ -382,7 +382,7 @@ sudo service ssh restart
 Now, log in to the instance using the password:
 ```bash
 ssh username@ip_address
-```bash
+```
 
 ### Fail2ban Installation from Source (Optional)
 
@@ -415,6 +415,7 @@ If Fail2ban is not available via `pip`, you can install it from source:
    sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
    sudo nano /etc/fail2ban/jail.local
    ```
+   
    ```bash
    enable = true
    port    = ssh
