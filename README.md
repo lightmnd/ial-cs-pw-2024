@@ -393,6 +393,25 @@ If Fail2ban is not available via `pip`, you can install it from source:
    sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
    sudo nano /etc/fail2ban/jail.local
    ```
+   ```bash
+   enable = true
+   port    = ssh
+   logpath = %(sshd_log)s
+   backend = %(sshd_backend)s
+   filter = sshd
+   maxretry = 3
+   findtime = 300
+   bantime = 3600
+   ignoreip = 127.0.0.1
+   ```
+   ```bash
+   sudo systemctl restart fail2ban.service
+
+   # check the statuses after the acces attempts (manually or using hydra) 
+   sudo fail2ban-client status
+   sudo fail2ban-client status sshd # in case of jail sshd active (secure SSH) 
+   ```
+   
 
    Make sure you have this settings:
    ```bash
@@ -424,5 +443,43 @@ If Fail2ban is not available via `pip`, you can install it from source:
    sudo journalctl -u fail2ban
    ```
 
+6. **Execute Brute-Force Attack:**
+
+   Install Hydra
+   ```bash
+   sudo apt update
+   sudo apt install hydra
+   ```
+   # =================
+   
+   Try an attack with Fail2Ban inactive
+   Stop Fail2Ban (on EC2)
+   ```bash
+   sudo systemctl stop fail2ban
+   ```
+   Attack with Hydra:
+   ```bash
+   hydra -l ec2-user -P /path/to/password-list.txt -t 5 ssh://your-ec2-public-ip
+   ```
+
+   # =================
+
+   Retry an attack with Fail2Ban active
+   Start Fail2Ban (on EC2)
+   ```bash
+   sudo systemctl start fail2ban
+   ```
+   Attack with Hydra:
+   ```bash
+   hydra -l ec2-user -P /path/to/password-list.txt -t 5 ssh://your-ec2-public-ip
+   ```
+   
+   # =================
+
+   Check logs (EC2)
+   ```bash
+   sudo tail -f /var/log/fail2ban.log
+   sudo journalctl -u fail2ban
+   ```
 
 ---
