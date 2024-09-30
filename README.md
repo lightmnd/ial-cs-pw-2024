@@ -360,7 +360,7 @@ echo "The installation is completed. Visit http://<your-ec2-ip>/sito_test/info.p
    sudo journalctl -u cron | grep restore_site_and_db.sh
    ```
 
-## Haking Time!
+## Hacking Time!
 First of all you need to access to Amazon EC2 Machine with ssh using password instead of the key pair
 
 Access the Amazon EC2 instance via SSH using the private key:
