@@ -9,6 +9,8 @@
 
 This guide provides step-by-step instructions for installing and configuring PHP, MariaDB, and Apache on both Ubuntu and AWS EC2 Amazon Linux. It also covers additional tasks such as setting up HTTPS, configuring DNS, and automating backups.
 
+![pw-dyagram](https://drive.google.com/uc?export=view&id=1S3Wujn-fDAT_00y_NoK9BcFHbDUMPeKc)
+
 ## Prerequisites
 
 - Access to an Ubuntu VM and an Amazon Linux EC2 instance.
