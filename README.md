@@ -507,4 +507,33 @@ If Fail2ban is not available via `pip`, you can install it from source:
    sudo journalctl -u fail2ban
    ```
 
+### To Wrap-Up
+**sito_test visible on the host machine (Mac):**
+![sito_test__visible_on_host_machine](https://drive.google.com/uc?export=view&id=1wdiBZgcYnFZU1zDUXHX7-TTyb43fHIKi)
+
+**Website running locally (Ubuntu VM):**
+![website_running_locally](https://drive.google.com/uc?export=view&id=1oglobmfNm9o5NOTFj2uH3BqBqGoiGoiv)
+
+**Website running in production:**
+![running_production_website](https://drive.google.com/uc?export=view&id=14HZj4e4wHoXlls_7v5y9ckJo1PU1jtNU)
+
+**S3 versioning list activities:**
+![s3_versioning](https://drive.google.com/uc?export=view&id=1M4MdcWBDtmgf6Cgd-NdoCfFWh17F_0tE)
+
+**Check for some Crontab logs:**
+![cron_logs](https://drive.google.com/uc?export=view&id=1xhDlmYZuIOMsr9rM1mpRxqiPWxIp3PAY)
+
+**Test to override website and DB from on-prem (as source) to AWS EC2 instance (as destination):**
+![test_override_from_onprem_to_ec2](https://drive.google.com/uc?export=view&id=1xhDlmYZuIOMsr9rM1mpRxqiPWxIp3PAY)
+
+**Brute-Force attack simulation with Hydra: it fails with no password method available:**
+![hydra_brute_force_failure_with_no_psw_method_available](https://drive.google.com/uc?export=view&id=1X3Wx4zh0G3msbX5eZJ1ZPNvs-g9eaBJj)
+
+**Fail2Ban test: detecting attempt (authentication on ssh with password enable):**
+![fail2ban_jail_test](https://drive.google.com/uc?export=view&id=1koF5WWetsuxDtPh3aZSLWUHhfWIvf5Cr)
+
+**Fail2Ban test: detecting attempt specific on sshd (authentication on ssh with password enable):**
+![fail2ban_jail_sshd](https://drive.google.com/uc?export=view&id=1TSQvDk_vbwvh06prUpY_XI3e1XtM6ToO)
+
+
 ---
